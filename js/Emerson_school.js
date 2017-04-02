@@ -1,15 +1,14 @@
 $(function(){
 
-// Create the chart
-Highcharts.chart('container', {
-    chart: {
+ $('#Emerson').highcharts({
+                 chart: {
         type: 'column'
     },
     title: {
         text: 'Tracking the Changes in Sexual Assault Reporting'
     },
     subtitle: {
-        text: 'Clery Act Reports by Institution, 2011-2015: <a href="https://docs.google.com/spreadsheets/u/2/d/1RC-u_zhe7wQjVqK4bLDk_08VUHhB-FbCQoZxGcBPbis/edit#gid=0">See Data</a>.'
+        text: 'Hello, 2011-2015: <a href="https://docs.google.com/spreadsheets/u/2/d/1RC-u_zhe7wQjVqK4bLDk_08VUHhB-FbCQoZxGcBPbis/edit#gid=0">See Data</a>.'
     },
     xAxis: {
         type: 'category'
