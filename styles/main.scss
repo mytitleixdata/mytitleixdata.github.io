@@ -1,0 +1,64 @@
+// sass --watch styles/main.scss:styles/main.css
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$pink-color: 			 #D66360;
+$dark-pink-color:  darken($pink-color, 30%);
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 20%);
+
+$text-color:       $grey-color-dark;
+$link-color:			 $pink-color;
+$title-color: 		 black;
+$hover-text-color: black;
+// $hover-link-color: $pink-color;
+$background-color: $grey-color-light;
+$pop-color:        $pink-color;
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding:0;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.container {
+
+	width: 100%;
+
+	.school {
+		display:none;
+	}
+
+}
+
+.mobile-only {
+	@media (min-width: 769px) {
+		display: none !important;
+	}
+}
+
+.desktop-only {
+	@media (max-width: 768px) {
+		display: none !important;
+	}
+}
+
+
+
