@@ -1,38 +1,40 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Erica Salling</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My Title IX</title>
 
-        <link href="styles/bootstrap.min.css" rel="stylesheet">
-        <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
 
-        <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
-        <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
-    </head>
-    <body>
-        <div class="container">
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-page">
 
             <select id="searchbar">
                 <option value="select">Select Your School</option>
                 <option value="NE">North East 2011-2015</option>
-                <option value="school2">School 2</option>
+                <option value="emerson"">Emerson</option>
                 <option value="school3">School 3</option>
             </select>
 
+            <div class="school" id="NE" style="height:400px; width:100%;"></div>
 
-            <div class="school" id="NE" style="height:400px; width:100%;">
-
-            look at me im hiding
-            </div>
+            <div class="school" id="emerson" style="height:400px; width:100%;"></div>
 
         </div>
+
+    </div>
 
 
 
@@ -41,65 +43,64 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
+<script>
 
-        <script>
+$(function(){
 
-        $(function(){
+    var loadJS = function(url, code, location){
+        //url is URL of external file, implementationCode is the code
+        //to be called from the file, location is the location to 
+        //insert the <script> element
+        var scriptTag = document.createElement('script');
+        scriptTag.type = 'text/javascript';
+        scriptTag.src = url;
 
-            var loadJS = function(url, code, location){
-                //url is URL of external file, implementationCode is the code
-                //to be called from the file, location is the location to 
-                //insert the <script> element
-                var scriptTag = document.createElement('script');
-                scriptTag.type = 'text/javascript';
-                scriptTag.src = url;
+        scriptTag.onload = code;
+        scriptTag.onreadystatechange = code;
 
-                scriptTag.onload = code;
-                scriptTag.onreadystatechange = code;
+        location.appendChild(scriptTag);
+    }
+    var code = function(){
+        console.log("damn we loaded");
+    }
+    
 
-                location.appendChild(scriptTag);
+   $("#searchbar").select2();
+
+    // pull up data for each school when selected
+    $("#searchbar").change(function () {
+        var school = '';
+        $("#searchbar option:selected").each(function() {
+
+            if ($(this).attr('value') === 'select'){
+                return;
             }
-            var code = function(){
-                console.log("damn we loaded");
+            else {
+                school = $(this).attr('value');
+                $('#' + school).fadeIn();
+                showData(school);
             }
-            
-
-           $("#searchbar").select2();
-
-            // pull up data for each school when selected
-            $("#searchbar").change(function () {
-                var school = '';
-                $("#searchbar option:selected").each(function() {
-
-                    if ($(this).attr('value') === 'select'){
-                        return;
-                    }
-                    else {
-                        school = $(this).attr('value');
-                        $('#' + school).fadeIn();
-                        showData(school);
-                    }
-
-                });
-                
-
-              })
-              .change();
-
-
-            function showData(school) {
-
-                var url = 'js/' + school + '_school.js';
-
-                loadJS(url, code, document.body);
-
-            };
-
-
 
         });
+        
 
-        </script>
+      })
+      .change();
 
-    </body>
+
+    function showData(school) {
+
+        var url = 'js/' + school + '_school.js';
+
+        loadJS(url, code, document.body);
+
+    };
+
+
+
+});
+
+</script>
+
+</body>
 </html>
