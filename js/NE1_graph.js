@@ -1,6 +1,8 @@
-    $(function () {
+$(function () {
 
-         $('#NE').highcharts({
+    if($('#NE').css('display') == 'block') {
+
+         $('#NE1').highcharts({
                  chart: {
                      type: "column",
                      width: 1200,
@@ -1315,6 +1317,7 @@
                          }
                  ]
          });
+    }
 
-    });
+});
 
