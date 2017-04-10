@@ -269,6 +269,9 @@ $(function(){
         $("#searchbar option:selected").each(function() {
 
             if ($(this).attr('value') === 'select'){
+                // Show that fancy homepage graph
+                $('#NE').fadeIn().addClass('ACTIVE');
+                showData('NE1');
                 return;
             } else {
                 // Find the select value and the graphs within it
@@ -302,10 +305,10 @@ $(function(){
 
     };
 
-
     // Show that fancy homepage graph
     $('#NE').fadeIn().addClass('ACTIVE');
     showData('NE1');
+
 
 });
 
