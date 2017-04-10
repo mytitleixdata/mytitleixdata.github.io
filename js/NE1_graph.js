@@ -17,7 +17,7 @@ $(function () {
                  },
                  plotOptions: {
                      series: {
-                         colorByPoint: true,
+                         colorBySeries: true,
                          dataLabels: {
                              style: {
                                  fontSize: "12px",
@@ -85,8 +85,6 @@ $(function () {
                  series: [
                      {
                              index: 0,
-                             color: "rgba(255, 255, 255, 0.94)",
-                             colorByPoint: true,
                              name: "2015",
                              data: [
                                  [
