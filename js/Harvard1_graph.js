@@ -2,14 +2,14 @@ $(function(){
 
 console.log('is this happening?');
 
-    if($('#Hampshire').css('display') == 'block') {
+    if($('#Harvard').css('display') == 'block') {
 
-        $('#Hampshire1').highcharts({
+        $('#Harvard1').highcharts({
             chart: {
         type: 'column'
     },
     title: {
-        text: 'Hampshire College Clery Act Report Data'
+        text: 'Harvard University Clery Act Report Data'
     },
     subtitle: {
         text: 'Sexual Assault Reports from the Campus Safety and Security Data Tool<a href="https://www.bostonglobe.com/2016/12/23/table-reports-sexual-assault-new-england-colleges/BG53TpCamCzxeCUF7tixYN/story.html</a>.'
@@ -41,27 +41,27 @@ console.log('is this happening?');
     },
 
     series: [{
-        name: 'Hampshire College Reports',
+        name: 'Harvard University Reports',
         colorByPoint: false,
         data: [{
             name: '2011',
-            y: 7,
+            y: 26,
             drilldown: '2011'
         }, {
             name: '2012',
-            y: 13,
+            y: 38,
             drilldown: '2012'
         }, {
             name: '2013',
-            y: 20,
+            y: 40,
             drilldown: '2013'
         }, {
             name: '2014',
-            y: 8,
+            y: 43,
             drilldown: '2014'
         }, {
             name: '2015',
-            y: 9,
+            y: 54,
             drilldown: '2015'
         }]
     }],
@@ -72,11 +72,11 @@ console.log('is this happening?');
                     data: [
                         [
                             'Actual Reports',
-                            7
+                            26
                         ],
                         [
                             'Expected Reports',
-                            280
+                            4400
                         ]
                     ]
               }, {
@@ -85,11 +85,11 @@ console.log('is this happening?');
                     data: [
                         [
                             'Actual Reports',
-                            13
+                            38
                         ],
                         [
                             'Expected Reports',
-                            280
+                            4400
                         ]
                     ]
                     }, {
@@ -98,11 +98,11 @@ console.log('is this happening?');
                     data: [
                         [
                             'Actual Reports',
-                            20
+                            40
                         ],
                         [
                             'Expected Reports',
-                            280
+                            4400
                         ]
                     ]
                     }, {
@@ -111,11 +111,11 @@ console.log('is this happening?');
                     data: [
                         [
                             'Actual Reports',
-                            8
+                            43
                         ],
                         [
                             'Expected Reports',
-                            280
+                            4400
                         ]
                     ]
                     }, {
@@ -124,11 +124,11 @@ console.log('is this happening?');
                     data: [
                         [
                             'Actual Reports',
-                            9
+                            54
                         ],
                         [
                             'Expected Reports',
-                            280
+                            4400
                         ]
                     ]
                 }]
