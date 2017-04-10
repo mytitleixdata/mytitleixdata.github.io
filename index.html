@@ -30,13 +30,13 @@
 </div>
 
     <div class="tab-content clearfix">
-        <div class="tab-pane fade in active search-page" id="search">
+
+        <div class="tab-pane fade in active search-page" role="tabpanel" id="search">
 
             <h3>Search for your school</h3>
 
             <select id="searchbar">
                 <option value="select">Search Your School</option>
-                <option value="NE">All New England Schools</option>
                 <option value="Amherst">Amherst College</option>
                 <option value="Assumption">Assumption College</option>
                 <option value="Babson">Babson College</option>
@@ -169,7 +169,8 @@
                 </div>
 
             </div>
-               <div class="school row" id="MassArtDesign">
+
+            <div class="school row" id="MassArtDesign">
                 <h3>Massachusetts College of Art and Design</h3>
 
                 <div class="graph col-sm-12 col-lg-6" id="MassArtDesign1" style="height:400px; width:75%"></div>
@@ -202,6 +203,7 @@
                     <p>Hammock VHS migas normcore. Mumblecore activated charcoal meh scenester normcore. Gastropub etsy forage, authentic kitsch truffaut bushwick echo park portland farm-to-table ethical. Ramps fap farm-to-table, hammock freegan synth migas forage vinyl raclette. Glossier skateboard unicorn hell of fanny pack shabby chic, polaroid banh mi pok pok jianbing 90's kitsch sustainable. Flannel 90's chicharrones put a bird on it woke chambray, heirloom lyft XOXO iceland post-ironic next level normcore swag. Butcher XOXO cliche hot chicken, williamsburg cornhole selvage godard meh fixie edison bulb post-ironic +1 vegan.</p>
                 </div>
             </div>
+
             <div class="school row" id="Merrimack">
                 <h3>Merrimack College</h3>
 
@@ -213,13 +215,15 @@
                 </div>
             </div>
 
-        <div class="tab-pane fade about-page" id="about">
+        </div>
+
+        <div class="tab-pane fade about-page" role="tabpanel" id="about">
 
             <h3>Understanding the Data</h3>
             <p>Tracking the Change of Sexual Assault: What does this data mean?</p>
         </div>
 
-        <div class="tab-pane fade logic-page" id="logic">
+        <div class="tab-pane fade logic-page" role="tabpanel" id="logic">
             <h3>Reporting Resources</h3>
             
         </div>
@@ -269,7 +273,10 @@ $(function(){
                 // Find the select value and the graphs within it
                 $('.school').hide();
                 school = $(this).attr('value');
+
+                $('.ACTIVE').removeClass('ACTIVE');
                 $('#' + school).fadeIn().addClass('ACTIVE');
+
                 graphs = $('#' + school).find('.graph');
                 _.each(graphs, function(graph){
                     // Populate the graphs
@@ -285,7 +292,7 @@ $(function(){
       })
       .change();
 
-
+    // Show that fancy data
     function showData(id) {
 
         var url = 'js/' + id + '_graph.js';
@@ -293,6 +300,11 @@ $(function(){
         loadJS(url, code, document.body);
 
     };
+
+
+    // Show that fancy homepage graph
+    $('#NE').fadeIn().addClass('ACTIVE');
+    showData('NE1');
 
 });
 
