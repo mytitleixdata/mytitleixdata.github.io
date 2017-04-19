@@ -249,6 +249,22 @@
 
 $(function(){
 
+    $(window).on('hashchange', function() {
+        var hash = location.hash.replace('#', '');;
+        console.log(hash);
+
+        _.each($("#searchbar option"), function(option){
+            console.log($(option).attr('value'));
+            if ($(option).attr('value') == hash) {
+                console.log("done")
+                $(option).attr('selected', true);
+                $('#searchbar').change();
+                return;
+            }
+
+        });
+    });
+
     var loadJS = function(url, code, location){
         //url is URL of external file, implementationCode is the code
         //to be called from the file, location is the location to 
