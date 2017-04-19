@@ -249,21 +249,20 @@
 
 $(function(){
 
+    if (window.location.hash) {
+        $(window).trigger('hashchange');
+    }
+
     $(window).on('hashchange', function() {
         var hash = location.hash.replace('#', '');;
-        console.log(hash);
-
         _.each($("#searchbar option"), function(option){
-            console.log($(option).attr('value'));
             if ($(option).attr('value') == hash) {
-                console.log("done")
-                $(option).attr('selected', true);
-                $('#searchbar').change();
+                $(option).prop('selected', true);
+                $('#searchbar').trigger('change');
                 return;
             }
-
         });
-    });
+    }).trigger('hashchange');
 
     var loadJS = function(url, code, location){
         //url is URL of external file, implementationCode is the code
@@ -285,9 +284,12 @@ $(function(){
     
 
    $("#searchbar").select2();
+   // Trigger a change to bring up that home page graph
+   $('#searchbar').trigger('change');
 
     // pull up data for each school when selected
     $("#searchbar").change(function () {
+        console.log("changing")
         var school = '';
         var graphs;
         $("#searchbar option:selected").each(function() {
@@ -329,9 +331,9 @@ $(function(){
 
     };
 
-    // Show that fancy homepage graph
-    $('#NE').fadeIn().addClass('ACTIVE');
-    showData('NE1');
+    // // Show that fancy homepage graph
+    // $('#NE').fadeIn().addClass('ACTIVE');
+    // showData('NE1');
 
 
 });
