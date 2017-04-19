@@ -263,6 +263,7 @@ $(function(){
         location.appendChild(scriptTag);
     }
     var code = function(){
+        window.location.hash = $("#searchbar option:selected").attr('value');
         console.log("script load successful");
     }
     
