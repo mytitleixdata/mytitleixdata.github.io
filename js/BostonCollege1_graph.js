@@ -2,9 +2,9 @@ $(function(){
 
 console.log('is this happening?');
 
-    if($('#Boston_College').css('display') == 'block') {
+    if($('#BostonCollege').css('display') == 'block') {
 
-        $('#Boston_College1').highcharts({
+        $('#BostonCollege1').highcharts({
             chart: {
         type: 'column'
     },
