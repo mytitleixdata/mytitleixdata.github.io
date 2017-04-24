@@ -42,7 +42,7 @@ console.log('is this happening?');
 
     series: [{
         name: 'Wentworth Institute of Technology Reports',
-        colorByPoint: true,
+        colorByPoint: false,
         data: [{
             name: '2011',
             y: 0,

@@ -42,7 +42,7 @@ console.log('is this happening?');
 
     series: [{
         name: 'Worcester Polytechnic Institute Reports',
-        colorByPoint: true,
+        colorByPoint: false,
         data: [{
             name: '2011',
             y: 2,
