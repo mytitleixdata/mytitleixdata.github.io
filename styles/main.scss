@@ -9,15 +9,15 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$pink-color: 			 #D66360;
+$pink-color: 	   #D66360;
 $dark-pink-color:  darken($pink-color, 30%);
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 20%);
 
 $text-color:       $grey-color-dark;
-$link-color:			 $pink-color;
-$title-color: 		 black;
+$link-color:	   $pink-color;
+$title-color: 	   black;
 $hover-text-color: black;
 // $hover-link-color: $pink-color;
 $background-color: $grey-color-light;
@@ -41,6 +41,21 @@ body, html {
 .container {
 
 	width: 100%;
+	padding: 0px;
+
+	.nav-pills {
+		a {
+			border-radius: 0px;
+
+			&:hover, &:focus, &:active {
+				
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 20px;
+	}
 
 	.school {
 		width: 100%;
@@ -51,6 +66,7 @@ body, html {
 
 	.graph {
 		z-index: 1000;
+		padding: 0px;
 	}
 	 
 }
